@@ -1,0 +1,22 @@
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: playground
+  annotations: # include optional annotations and/or labels.
+    version: v1.0.0
+    description: "Customized version of nginx"
+spec:
+  components:
+    - name: nginx # an nginx component exposing port 80
+      type: webservice
+      properties:
+        image: nginx:1.20.0
+        ports:
+        - port: 80
+          expose: true
+      traits:
+      - type: napptive-ingress # a napptive-ingress trait to get a public endpoint
+        properties:
+          name: nginx
+          port: 80
+          path: /
