@@ -14,6 +14,7 @@ app.get('/', async (req, res) => {
     await sequelize.authenticate();
     res.send('Hello Happy World!');
   } catch (error) {
+    console.log(error);
     res.send(error);
   }
 })
