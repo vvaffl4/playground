@@ -4,7 +4,8 @@ const app = express()
 const port = 3000
 
 const sequelize = new Sequelize('playground', 'user', 'ThisIsAPassword1!', {
-  host: '127.0.0.1:3306',
+  host: 'mysql',
+  port: 3306,
   dialect: 'mysql'
 });
 
