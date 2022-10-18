@@ -3,7 +3,7 @@ const { Sequelize } = require('sequelize');
 const app = express()
 const port = 3000
 
-const sequelize = new Sequelize('playground', '', 'ThisIsAPassword1!', {
+const sequelize = new Sequelize('playground', 'mysql', 'ThisIsAPassword1!', {
   host: 'mysql',
   port: 3306,
   dialect: 'mysql'
